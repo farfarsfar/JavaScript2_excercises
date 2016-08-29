@@ -1,0 +1,28 @@
+#target {
+    width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+p {
+    
+}
+div {
+    width: 100%;
+    margin: 2em;
+    
+
+}
+meter {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    
+}
