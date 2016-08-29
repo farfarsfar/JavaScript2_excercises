@@ -47,7 +47,6 @@ function changeImgSrc(image) {
     checkImage(imgSources[whichImage], function() { toChange.src = imgSources[whichImage]; console.log("Image loaded") }, function() { console.log("Image could not be loaded!")})
 }
 
-
 function randomNumber() {
     var random = Math.floor(Math.random() * 100 + 1);
     console.log("random number: ", random);

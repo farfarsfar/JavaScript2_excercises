@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery-uppgifter</title>
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="css/main.css" media="screen" charset="utf-8">
+  </head>
+  <body>
+    <div class="container"> 
+      <section class="row">
+      <h1>jQuery-uppgifter</h1>
+        <p>Lös dessa uppgifter genom att ändra i js-filen i mappen 'js'. Varje knapp ska utföra den funktionen som står på knappen. Använd dokumentationen från jQuerys hemsida. När du kommer till animationerna längre ner, använd olika parametrar för att kontrollera animationerna så att de t.ex. går snabbare eller långsammare eller rör sig på ett "custom" sätt. Ta hjälp av länkarna som finns på Studentportalen</p>
+        <p>Ladda ner från <a href='http://jquery.com/download/'>http://jquery.com/download/</a> eller använd via deras CDN: <a href="https://code.jquery.com/">https://code.jquery.com/</a></p>
+        </section>
+        <section class="row">
+            <h3> CSS-hantering </h3>
+                <button type="button" class="btn btn-success-outline addclass">Add class</button>
+                <button type="button" class="btn btn-success-outline removeclass">Remove class</button>
+                <button type="button" class="btn btn-success-outline toggleclass">Toggle class</button>
+              <div class="card card-block dummy classcard">
+                <h4 class="card-title">Add / Remove / Toggle Class</h4>
+                <p class="card-text">Ändra i .js-filen så att du kan ändra klassen på mig</p>
+            </div>
+          </section>
+          <section class="row">
+                <button type="button" class="btn btn-success-outline height">Height</button>
+                <button type="button" class="btn btn-success-outline width">Width</button>
+                <button type="button" class="btn btn-success-outline height-width-reset">Reset</button>
+              <div class="card card-block dummy sizecard">
+                <h4 class="card-title">Height and Width</h4>
+                <p class="card-text">Ändra i js-filen så att du kan ändra höjd och bredd på mig.Extrauppgift: fixa så att 'Reset'-knappen ställer tillbaka till de ursprungliga värdena</p> 
+              </div> 
+        </section>
+        <section class="row">
+          <h3>DOM Insertion, Inside</h3>
+            <button type="button" class="btn btn-success-outline append">append</button>
+            <button type="button" class="btn btn-success-outline html">html</button>
+            <button type="button" class="btn btn-success-outline prepend">prepend</button>
+            <button type="button" class="btn btn-success-outline text">text</button>
+            <button type="button" class="btn btn-success-outline text">text</button>
+            <div class="card card-block insidecard">
+              <h4 class="card-title">DOM Insertion, Inside</h4>
+              <p class="card-text">Ändra i .js-filen så att knapparna lägger till text på olika ställen i denna ruta genom de olika funktionerna.</p>
+              <p>Extrauppgift: 
+          </div>
+        </section>
+        <section class="row">
+            <h3>DOM Insertion, Outside</h3>
+              <button type="button" class="btn btn-success-outline after">after</button>
+              <button type="button" class="btn btn-success-outline before">before</button>
+              <div class="card card-block outsidecard">
+                <h4 class="card-title">DOM Insertion, Outside</h4>
+                <p class="card-text">Ändra i .js-filen så att knapparna lägger till text före och efter denna ruta</p>
+            </div>
+        </section>
+            <section class="row">
+              <h3>DOM Removal</h3>
+                <button type="button" class="btn btn-success-outline empty">empty</button>
+                <button type="button" class="btn btn-success-outline remove">remove</button>
+                <div class="card card-block domremovecard">
+                  <h4 class="card-title">DOM Removal</h4>
+                  <p class="card-text">Ändra i .js-filen så att jag försvinner helt från DOM</p>
+        </section>
+        <section class="row">
+            <h3>Effects - Basics </h3>
+              <button type="button" class="btn btn-success-outline hide">hide</button>
+              <button type="button" class="btn btn-success-outline show">show</button>
+              <button type="button" class="btn btn-success-outline toggle">toggle</button>
+              <div class="card card-block effect1">
+                <h4 class="card-title">Hide / Show  / Toggle</h4>
+                <p class="card-text">Ändra i .js-filen så att denna ruta göms/visas med knapparna</p>
+          </section>
+          <section class="row">
+            <h3>Effects - Fading </h3>
+              
+                <button type="button" class="btn btn-success-outline fadeIn">fade in</button>
+                <button type="button" class="btn btn-success-outline fadeOut">fade out</button>
+                <button type="button" class="btn btn-success-outline fadeTo">fade to</button>
+                <button type="button" class="btn btn-success-outline fadeToggle">Fade toggle</button>
+                <div class="card card-block fadeEffect">
+                  <h4 class="card-title">Fade in / out / to / toggle</h4>
+                  <p class="card-text">Ändra i .js-filen så att denna ruta tonas in och ut</p>
+            </section>
+            <section class="row">
+              <h3>Effects - Sliding </h3>
+                <button type="button" class="btn btn-success-outline slideToggle">slide toggle</button>
+                <button type="button" class="btn btn-success-outline slideUp">slide up</button>
+                <button type="button" class="btn btn-success-outline slideDown">slide down</button>
+                <div class="card card-block slideEffect">
+                  <h4 class="card-title">Slide effects</h4>
+                  <p class="card-text">Ändra i .js-filen så att denna ruta glider in nedifrån och uppifrån</p>
+        </section>
+        <section class="row">
+          <h3>Custom</h3>
+            <button type="button" class="btn btn-success-outline slideToggleSide">slide toggle left/right</button>
+            <div class="card card-block slideToggleCard">
+              <h4 class="card-title">Slide toggle</h4>
+              <p class="card-text">Ändra i .js-filen så att du kan toggla att denna ruta glider in</p>
+          </section>
+
+          <section class="row">
+            <button type="button" class="btn btn-success-outline slideinright">slide in from right</button>
+            <div class="card card-block slideinrightcard"  style="position: relative; left: 1200px;">
+              <h4 class="card-title">Glid in från vänster</h4>
+              <p class="card-text">Ändra i .js-filen så att denna ruta glider in från vänster</p>
+        </section>
+          <section class="row">
+            <button type="button" class="btn btn-success-outline slideinleft">slide in from left</button>
+            <div class="card card-block slideinleftcard" style="position: relative; left: -1200px;">
+              <h4 class="card-title">Glid in från vänster</h4>
+              <p class="card-text">Ändra i .js-filen så att denna ruta glider in från vänster</p>
+          </section>
+        <section class="row">
+          <h3>Mouse Events</h3>
+          <button type="button" class="btn btn-success-outline click">click</button>
+          <button type="button" class="btn btn-success-outline dblclick">double click</button>
+          <button type="button" class="btn btn-success-outline hover">hover</button>
+          <button type="button" class="btn btn-success-outline mousedown">mouse down</button>
+          <button type="button" class="btn btn-success-outline mouseup">mouse up</button>
+          <button type="button" class="btn btn-success-outline mouseenter">mouse enter</button>
+          <button type="button" class="btn btn-success-outline mouseleave">mouse leave</button>
+          <button type="button" class="btn btn-success-outline mousemove">mouse move</button>
+          <div class="card card-block mouseevents">
+            <h4 class="card-title">Mouse Events</h4>
+              <p class="card-text">Ändra i .js-filen så varje knapp gör något med sidan, varje knapp ska använda sig utav den metod som står på knappen.</p>
+          </div>
+        </section>
+<!---Scripts -->
+    <script src="js/jquery.min.js" charset="utf-8"></script>
+    <script src="js/bootstrap.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+body {
+    text-align: center;
+}
+ul {
+    padding: 10px;
+    list-style-type: none;
+}
+
+li span {
+    font-weight: bold;
+}
+
+table {
+    padding-top: 30px;
+    margin: 0 auto;
+    border-spacing: 0;
+
+}
+
+thead {
+    background-color: forestgreen;
+    color: #EFEFEF;
+}
+
+th, td {
+    height: 2em;
+    border-bottom: 1px solid #AAA;
+    vertical-align: middle;
+}
+
+#kolumn1{
+    padding-left: 5em;
+}
+th {
+    height: 3em;
+    padding: 0 10px;
+}
+td {
+    padding: 10px 0;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover td {
+    background-color: #777;
+}
