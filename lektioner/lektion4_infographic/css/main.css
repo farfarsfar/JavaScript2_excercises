@@ -1,28 +1,56 @@
+body {
+    white-space: nowrap;
+    width: 100%;
+
+}
+#targetwrapper {
+    position: relative;
+    height:80vh;
+}
 #target {
-    width: 600px;
-    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    height: 60vh;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    align-items: flex-end;
+    
 }
 
 p {
+   
+}
+
+.container {
+    margin: 2em;
+    vertical-align: bottom;
+    display: inline-block;
+}
+.meter {
+    width: 40px;
+    background-color: blue;
+    transition: transform 1s ease;
+    position: relative;
+}
+
+.meter:hover {
+    transform-origin: left bottom;
+    transform: translateY(-300px) rotate(90deg) scale(1.5);
     
 }
-div {
-    width: 100%;
-    margin: 2em;
-    
 
+.meter p {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    position: absolute;
+    bottom: -1em;
+    left: 10px;
 }
 meter {
+    width: 100%;
     /* Reset the default appearance */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-
     display: inline-block;
-    width: 100%;
-    box-sizing: border-box;
-    
 }

@@ -1,62 +1,68 @@
 var apiBase = "http://swapi.co/api/";
-var JSONquery = 
-    { "query": [
-        {"code": "ContentsCode",
-         "selection": {
-            "filter": "item",
-            "values": ["000000TP"]
-            }
-        }
-    ],
-    "response": {
-        "format": "json"
-    }
-}
 
 function getPeople(url) {
-    var total = '';
-    var topWeight = 0;
+    var currentTopWeight = 0;
     $("#target").hide().fadeOut();
     getInner(apiBase + url);
     function getInner(url){
         $.get(url, function(data){
-            console.log(data)
-            $.each(data.results, function(index, person){
-                topWeight = person.mass > topWeight ? person.mass : topWeight;
-                // clear comma from weight
-                person.mass = person.mass.replace(/\,/g,'');
+           $.each(data.results, function(index, person){
+
+                // clear comma from person's weight
+                person.mass = Number(person.mass.replace(/\,/g,''));
+                //set top weight
+                currentTopWeight = getTopWeight(person.mass, currentTopWeight)
+
                 //calculate BMI
                 var bmi = Math.round((person.mass / Math.pow(person.height / 100, 2) * 10)) / 10;
-                console.log(person.height)
-                var div = $("<div/>");
-                var meter = $("<meter/>",
-                            { html: person.name,
-                              value: person.mass
+                
+                var div = $("<div/>", { class: "container"});
+                var meter = $("<div/>",
+                            { class: "meter",
+                              style: "height: " + person.mass + "px"
                                        });
-                var label = $("<p/>", {html: person.name 
-                                          + ". Weight: " + person.mass 
+                var label = $("<p/>", { html: person.name 
+                                          /*+ ". Weight: " + person.mass 
                                           + ". Height: " + person.height 
-                                          + ". BMI: " + bmi});
-                div.append(meter, label);
-                 
-                if (person.mass !== 'unknown') { $("#target").append(div) };
+                                          + ". BMI: " + bmi*/});
+                meter.append(label)
+                div.append(meter);
+                if (!isNaN(person.mass)) { $("#target").append(div) };
             });
             
             if (data.next) {
                 getInner(data.next)    
-            };
-            
-            
+            }
+           
         });
-    }    
+        //$("#target .meter").attr("max", currentTopWeight)
+    }  
+    
+      
+}
+
+function getTopWeight(personMass, currentTop) {
+    var topWeight = personMass > currentTop ? personMass : currentTop;
+    return topWeight;
 }
 
 getPeople("people")
 
 
 $(document).ajaxStop(function() {
+    
     $("#target").show();
+
+    /*$("div").each(function() {
+        var $this = $(this),
+        child = $this.children(":first");
+        $this.css("minHeight", function() {
+            return child[0].getBoundingClientRect().height;
+    });*/
+
 })
+
+
 /*
 $( document ).ready(function() {
     $.ajax({
