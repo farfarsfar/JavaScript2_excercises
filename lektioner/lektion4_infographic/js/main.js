@@ -1,10 +1,10 @@
 var apiBase = "http://swapi.co/api/";
 
-function getPeople(url) {
+const getPeople = url => {
     var currentTopWeight = 0;
     $("#target").hide().fadeOut();
     getInner(apiBase + url);
-    function getInner(url){
+    function getInner(url) {
         $.get(url, function(data){
            $.each(data.results, function(index, person){
 
@@ -34,19 +34,19 @@ function getPeople(url) {
                 getInner(data.next)    
             }
            
-        });
+        }).done(function () { console.log(this); });
         //$("#target .meter").attr("max", currentTopWeight)
     }  
     
       
 }
 
-function getTopWeight(personMass, currentTop) {
+const getTopWeight = (personMass, currentTop) => {
     var topWeight = personMass > currentTop ? personMass : currentTop;
     return topWeight;
 }
 
-getPeople("people")
+getPeople("people/")
 
 
 $(document).ajaxStop(function() {

@@ -33,9 +33,11 @@ p {
     position: relative;
 }
 
-.meter:hover {
+.meter:active {
     transform-origin: left bottom;
     transform: translateY(-300px) rotate(90deg) scale(1.5);
+    position: absolute;
+    left: 0;
     
 }
 

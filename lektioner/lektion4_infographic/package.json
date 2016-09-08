@@ -1,0 +1,21 @@
+{
+  "name": "lektion4_infographic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test",
+    "build": "npm run transpile && npm run uglify",
+    "transpile": "babel --presets es2015 js/2.js -o build/2transpile.js",
+    "uglify": "uglifyjs build/main.js -o build/ugly.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "npm-run-all": "^3.1.0",
+    "uglify-js": "^2.7.3"
+  }
+}
