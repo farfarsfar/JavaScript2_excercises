@@ -1,4 +1,7 @@
 var apiBase = "http://swapi.co/api/";
+var $ = require('jquery');
+
+require('../css/main.css');
 
 const getPeople = url => {
     var currentTopWeight = 0;
@@ -8,7 +11,7 @@ const getPeople = url => {
         $.get(url, function(data){
            $.each(data.results, function(index, person){
 
-                // clear comma from person's weight
+                // clear from person's weight
                 person.mass = Number(person.mass.replace(/\,/g,''));
                 //set top weight
                 currentTopWeight = getTopWeight(person.mass, currentTopWeight)
@@ -19,7 +22,7 @@ const getPeople = url => {
                 var div = $("<div/>", { class: "container"});
                 var meter = $("<div/>",
                             { class: "meter",
-                              style: "height: " + person.mass + "px"
+                              style: "height: " + (person.mass*4) + "px"
                                        });
                 var label = $("<p/>", { html: person.name 
                                           /*+ ". Weight: " + person.mass 
@@ -63,35 +66,4 @@ $(document).ajaxStop(function() {
 })
 
 
-/*
-$( document ).ready(function() {
-    $.ajax({
-        url: scbApi,
-        type: "POST",
-        data: JSON.stringify(JSONquery),
-        datatype: "json"
-    }).done(function(obj) {
-        var rubriker = obj.columns;
-        var data = obj.data;
-        $("<thead/>", {
-            id: "resultHead"
-        }).appendTo("#target")
-        
-        $.each(rubriker, function(index, value){
-           $("<th/>", {
-                id: "kolumn" + index,
-                html: value.text
-                }
-            ).appendTo("#resultHead");
-        });
-        $.each(data, function(index, value){
-            var currentRow = $("<tr/>")
-            $("<td/>", { html: value.key[0] }).appendTo(currentRow)
-            $("<td/>", { html: new Intl.NumberFormat('sv-SE').format(value.values[0]) 
-                       }).appendTo(currentRow)
-            currentRow.appendTo("#target")
-        });
-    });
-});
-*/
 
