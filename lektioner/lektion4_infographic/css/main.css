@@ -17,6 +17,25 @@ body {
     
 }
 
+#detailedDisplay {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  transform: rotate(-90deg);
+  position: fixed;
+  bottom: 0;
+  
+}
+
+.detailedLabel {
+  transform: rotate(90deg) translateY(20px);
+  margin: 0 auto;
+}
+
+.detailedMeter {
+  max-height: 100%;
+  
+}
 p {
    
 }
@@ -33,21 +52,6 @@ p {
     position: relative;
 }
 
-.meter:active {
-    transform-origin: left bottom;
-    transform: translateY(-300px) rotate(90deg) scale(1.5);
-    position: absolute;
-    left: 0;
-    
-}
-
-.meter p {
-    transform: rotate(-90deg);
-    transform-origin: left top;
-    position: absolute;
-    bottom: -1em;
-    left: 10px;
-}
 meter {
     width: 100%;
     /* Reset the default appearance */
