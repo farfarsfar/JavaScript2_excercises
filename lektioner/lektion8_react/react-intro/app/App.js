@@ -75,7 +75,10 @@ class App extends React.Component {
             <Mount onClick={this.mount} clicks={this.state.clicks}/>
             <Unmount onClick={this.unmount} />
             <div id='mount'></div>
-            {this.state.shouldMount ? <Mounted /> : null }
+            {this.state.shouldMount ? <Mounted>
+                                        <p>Child to mounted component</p>
+                                      </Mounted> 
+                                    : null }
             <List list={this.state.data} />
         	</div>
         	);

@@ -7,7 +7,8 @@ class Mounted extends Component {
   }
 
   componentDidMount() {
-    console.log("<Mounted /> DidMount")
+    console.log(this.props)
+
   }
 
   componentWillUnmount() {
@@ -15,7 +16,10 @@ class Mounted extends Component {
   }
 
   render () {
-    return <h2>Mounted!</h2>
+    return <div>
+              <h2>Mounted!</h2>
+              <div>{this.props.children}</div>
+           </div>
   }
 
 }

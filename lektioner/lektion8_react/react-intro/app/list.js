@@ -6,11 +6,11 @@ class List extends React.Component {
   render() {
     return (
       <ul>
-        {this.props.list.map(function(item, i){
-          return <li key={i}>
-                  <p>{item.name}</p>
-                 </li>
-        })}
+        {this.props.list.map((item, i) => 
+          <li key={i}>
+            {item.name}
+          </li>
+        )}
       </ul>
     )}
 }
