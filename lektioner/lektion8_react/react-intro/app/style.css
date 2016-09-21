@@ -1,0 +1,28 @@
+body, html{
+	width: 100%;
+	min-height: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  background-color: #DDD;
+}
+*{
+	padding: 10px;
+	margin: 10px;
+  list-style-type: armenian;
+}
+
+#app {
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  height: 1em;
+}
+
+input { 
+  display: inline-block;
+}

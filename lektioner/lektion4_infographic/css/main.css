@@ -5,7 +5,8 @@ body {
 }
 #targetwrapper {
     position: relative;
-    height:80vh;
+    height: 70vh;
+    
 }
 #target {
     position: absolute;
@@ -14,44 +15,71 @@ body {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    
+    background: repeating-linear-gradient(
+  to top,
+  #ddd,
+  #ddd 1px,
+  #fff 1px,
+  #fff 5%
+    );
 }
 
 #detailedDisplay {
+  width: 100%;
+  margin: 2em 0;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: row;
-  transform: rotate(-90deg);
+  transform-origin: 0 50%;
   position: fixed;
-  bottom: 0;
-  
+  bottom: 0px;
 }
 
 .detailedLabel {
-  transform: rotate(90deg) translateY(20px);
+  position: absolute;
+  bottom: -20px;
   margin: 0 auto;
 }
 
 .detailedMeter {
-  max-height: 100%;
-  
+  max-width: 100%;
+
 }
+
 p {
-   
+
 }
 
 .container {
-    margin: 2em;
+    margin: 0 2px;
+    width: 20px;
     vertical-align: bottom;
-    display: inline-block;
+    display: inline-block;   
+}
+.container:before {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  width: inherit;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1); 
+  display: block;
 }
 .meter {
-    width: 40px;
-    background-color: blue;
-    transition: transform 1s ease;
-    position: relative;
+  margin: 0;
+  background-color: blue;
+  transition: transform 1s ease;
+  position: relative;
 }
 
+.animateBar {
+  animation: height 2s;
+}
+
+.selected {
+  background-color: #DDD;
+}
 meter {
     width: 100%;
     /* Reset the default appearance */
@@ -60,3 +88,4 @@ meter {
     appearance: none;
     display: inline-block;
 }
+
