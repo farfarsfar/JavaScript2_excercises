@@ -142,15 +142,6 @@ body > header h1 {
   position: relative;
 }
 
-meter {
-    width: 100%;
-    /* Reset the default appearance */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    display: inline-block;
-}
-
 /* UTILITY */
 
 .zoomed .meter{
