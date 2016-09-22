@@ -1,17 +1,47 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
 body {
     white-space: nowrap;
     width: 100%;
-
+    font-family: 'Droid Sans', sans-serif;
 }
+
+p {
+  font-family: 'Cabin', sans-serif;
+}
+body > header {
+  display: block;
+  width: 90vw;
+  max-width: 600px;
+  position: fixed;
+  top: 0;
+  text-align: center;
+  margin: 1vw 0 0 5vw;
+  padding: 1em;
+  background-color: black;
+  box-shadow: 3px 3px 10px;
+  z-index: 2;
+}
+
+body > header h1 {
+  color: white;
+  
+}
+
 #targetwrapper {
+    margin-left: 3vw;
     position: relative;
-    height: 70vh;
+    height: 76vh;
     
 }
 #target {
     position: absolute;
     bottom: 0;
-    height: 60vh;
+    left: 8vw;
+    padding-right: 10vw;
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -23,40 +53,77 @@ body {
   #fff 5%
     );
 }
+#yLabelContainer {
+  margin-left: 1em;
+  width: 3em;
+  height: 100%;
+}
+
+#yLabelContainer .axisLabel {
+  top: 50%;
+  padding-top: 4vw;
+  transform: translateX(-50%) rotate(270deg);
+}
+
+#xLabelContainer .axisLabel {
+  left: 50%;
+  padding-top: 1em;
+}
+.axisLabel {
+  position: absolute;
+  text-transform: uppercase;
+  letter-spacing: 3em;
+
+}
 
 #detailedDisplay {
-  width: 100%;
-  margin: 2em 0;
+  width: 90vw;
+  height: 3em;
+  margin: 0 5vw 10vh 5vw;
   display: flex;
+  align-content: stretch;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   flex-direction: row;
-  transform-origin: 0 50%;
   position: fixed;
   bottom: 0px;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  box-shadow: 0 -12px 20px -20px; 
+  
 }
 
 .detailedLabel {
-  position: absolute;
-  bottom: -20px;
-  margin: 0 auto;
+  padding: 1em 3em;
+  background-color: #EEE;
+  white-space: normal;
+  z-index: -1;
+  flex-basis: 100%;
 }
 
+.detailedLabel span {
+  font-weight: 700;
+}
+
+.labelName {
+  color: darkgreen;
+  font-size: larger;
+}
 .detailedMeter {
-  max-width: 100%;
-
-}
-
-p {
-
+  background-color: lightseagreen;
+  box-shadow: 0 0.4em 3em 0 rgba(0,0,0,0.8);
+  border-radius: 5px;
 }
 
 .container {
     margin: 0 2px;
-    width: 20px;
+    width: 2em;
     vertical-align: bottom;
     display: inline-block;   
+    transition: all 1s ease;
 }
+
 .container:before {
   position: absolute;
   bottom: 0;
@@ -65,21 +132,16 @@ p {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.1); 
   display: block;
+  pointer-events: none;
+  transition: background-color 1s ease;
 }
 .meter {
-  margin: 0;
   background-color: blue;
-  transition: transform 1s ease;
+  box-shadow: 1px 1px 10px;
+  transition: background-color 400ms ease;
   position: relative;
 }
 
-.animateBar {
-  animation: height 2s;
-}
-
-.selected {
-  background-color: #DDD;
-}
 meter {
     width: 100%;
     /* Reset the default appearance */
@@ -89,3 +151,8 @@ meter {
     display: inline-block;
 }
 
+/* UTILITY */
+
+.zoomed .meter{
+  background: steelblue;
+}
